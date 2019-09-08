@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mandiri-personal-web
+  labels:
+    app: mandiri-personal-web-app
+    tier: webapp
+spec:
+   type: LoadBalancer
+   ports:
+   - port: 80
+     targetPort: http-server
+   selector:
+     app: mandiri-personal-web-app
+     tier: webapp
