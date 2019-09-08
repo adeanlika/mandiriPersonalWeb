@@ -1,3 +1,0 @@
-def project = 'mandiriproject'
-def appName = 'mandiriPersonalWeb'
-def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
