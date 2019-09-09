@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mandiri-personal-web
+  labels:
+    app: mandiri-personal-web-app
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: mandiri-personal-web-app
+        tier: webapp
+    spec:
+      containers:
+        - name: mandiri-personal-web
+          image: gcr.io/mandiriproject/mandiri-personal-web
+          imagePullPolicy: Always
+          ports:
+            - name: http-server
+              containerPort: 8080
+
