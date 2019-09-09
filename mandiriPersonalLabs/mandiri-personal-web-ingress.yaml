@@ -1,0 +1,38 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Ingress"
+metadata:
+  name: "mandiripersonalweb"
+  namespace: "default"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: "/adeanlikad"
+        backend:
+          serviceName: "mandiri-personal-web"
+          servicePort: 80
+    host: "web.com"
+
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  creationTimestamp: "2019-09-07T22:48:50Z"
+  generation: 1
+  name: mandiripersonalweb
+  namespace: default
+  resourceVersion: "18926"
+  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/mandiripersonalweb
+  uid: a907454c-d1c1-11e9-b7df-42010a800111
+spec:
+  rules:
+  - host: web.com
+    http:
+      paths:
+      - backend:
+          serviceName: mandiri-personal-web
+          servicePort: 80
+        path: /adeanlikad
+status:
+  loadBalancer: {}

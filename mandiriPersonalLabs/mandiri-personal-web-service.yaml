@@ -1,15 +1,29 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mandiri-personal-web
+  creationTimestamp: "2019-09-07T22:26:22Z"
   labels:
     app: mandiri-personal-web-app
     tier: webapp
+  name: mandiri-personal-web
+  namespace: default
+  resourceVersion: "14621"
+  selfLink: /api/v1/namespaces/default/services/mandiri-personal-web
+  uid: 8532a246-d1be-11e9-b7df-42010a800111
 spec:
-   type: LoadBalancer
-   ports:
-   - port: 80
-     targetPort: http-server
-   selector:
-     app: mandiri-personal-web-app
-     tier: webapp
+  clusterIP: 10.0.6.53
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30779
+    port: 80
+    protocol: TCP
+    targetPort: http-server
+  selector:
+    app: mandiri-personal-web-app
+    tier: webapp
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 34.69.180.152
